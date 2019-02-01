@@ -1,0 +1,42 @@
+<p>
+  customers works!
+</p>
+<br><br>
+<div> Months :
+    <select>
+       <option *ngFor="let i of months">{{i}}</option>
+    </select>
+ </div><br>
+ <b>{{todaydate | date:'d/M/y'}}</b><br/>
+ <br><br>
+<div>
+<table>
+<thead>
+  <tr >
+    <th>Name</th>
+    <th>City</th>
+    <th>OrderTotal</th>
+  </tr>
+</thead>
+  
+  <tr *ngFor="let cust of cust">
+      <td>
+          <a> {{ cust.name }} </a>
+      </td>
+      <td>{{cust.city}} </td>
+      <td>{{cust.orderTotal  | currency:"USD"}} </td>
+        </tr>
+  <tr>
+      
+    <td colspan="2">&nbsp;</td>
+    <td style="border-top: 1px solid black;">
+         {{customersOrderTotal | currency:"USD"}}
+    </td>
+</tr>
+  <tr>
+      <td>No of customers:{{cust.length}}    </td>
+    </tr>  
+    
+</table>
+
+</div>
